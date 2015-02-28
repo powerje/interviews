@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 __author__ = 'jep'
 
 def calculate_volume_for_histogram(histogram):
