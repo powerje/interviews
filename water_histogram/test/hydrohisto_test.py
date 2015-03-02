@@ -23,6 +23,10 @@ class TestHistogram(unittest.TestCase):
     histogram = [0, 2, 1, 4, 2, 2, 3, 5, 1, 0]
     self.assertEqual(6, hydrohisto.calculate_volume_for_histogram(histogram))
 
+  def test_open_histogram2(self):
+      histogram = [0, 2, 1, 0, 4, 2, 2, 3, 5, 1, 0]
+      self.assertEqual(8, hydrohisto.calculate_volume_for_histogram(histogram))
+
   def test_tall_middle_histogram(self):
       histogram = [0, 2, 1, 4, 2, 10, 3, 5, 1, 0]
       self.assertEqual(5, hydrohisto.calculate_volume_for_histogram(histogram))
@@ -42,3 +46,7 @@ class TestHistogram(unittest.TestCase):
   def test_tiny_histogram3(self):
       histogram = [0, 1, 0, 1, 0, 1]
       self.assertEqual(2, hydrohisto.calculate_volume_for_histogram(histogram))
+
+  def test_tiny_histogram_with_negatives(self):
+    histogram = [0, 1, -2, 1, 0, 1]
+    self.assertEqual(4, hydrohisto.calculate_volume_for_histogram(histogram))

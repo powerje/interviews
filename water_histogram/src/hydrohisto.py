@@ -27,5 +27,5 @@ def _maxes_at_each_index_for_array(arr):
     return ret
 
 if __name__ == '__main__':
-  histogram = [1, 2, 1, 4, 2, 2, 3, 5, 1, 8]
+  histogram = [0, 2, 1, 0, 4, 2, 2, 3, 5, 1, 0]
   print('volume: {0}'.format(calculate_volume_for_histogram(histogram)))
