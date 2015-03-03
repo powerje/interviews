@@ -1,7 +1,7 @@
 __author__ = 'jep'
 
 import unittest
-from src import hydrohisto
+from water_histogram.src import hydrohisto
 
 
 class TestHistogram(unittest.TestCase):

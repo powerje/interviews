@@ -1,4 +1,4 @@
-package com.powerje.interviews;
+package combinations_0_and_1.com.powerje.interviews;
 
 import java.util.ArrayList;
 import java.util.List;
