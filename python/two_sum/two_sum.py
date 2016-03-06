@@ -6,16 +6,12 @@ def twoSum(nums, target):
     :type target: int
     :rtype: List[int]
     """
-    i = 0
-    while i < len(nums):
-        currentValue = nums[i]
-        xs = nums[i+1:]
-        x = 0
-        while x < len(xs):
-            if currentValue + xs[x] == target:
-                return [i, x + i + 1]
-            x += 1
-        i += 1
+    cached = {}
+    for i, num in enumerate(nums):
+        checkKey = target - num
+        if checkKey in cached:
+            return [cached[checkKey], i]
+        cached[num] = i
 
 
 if __name__ == '__main__':
