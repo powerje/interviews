@@ -1,7 +1,7 @@
 __author__ = 'jep'
 
 import unittest
-from water_histogram.src import hydrohisto
+from python.water_histogram import hydrohisto
 
 
 class TestHistogram(unittest.TestCase):
@@ -9,6 +9,14 @@ class TestHistogram(unittest.TestCase):
   def test_flat_histogram(self):
     histogram = [0, 0, 0, 0]
     self.assertEqual(0, hydrohisto.calculate_volume_for_histogram(histogram))
+
+  def test_flat_histogram_at_height(self):
+    histogram = [1, 1, 1, 1]
+    self.assertEqual(0, hydrohisto.calculate_volume_for_histogram(histogram))
+
+  def test_flat_histogram_with_negatives(self):
+      histogram = [-1, -1, -1, -1]
+      self.assertEqual(4, hydrohisto.calculate_volume_for_histogram(histogram))
 
   def test_empty_histogram(self):
     histogram = []
@@ -50,3 +58,4 @@ class TestHistogram(unittest.TestCase):
   def test_tiny_histogram_with_negatives(self):
     histogram = [0, 1, -2, 1, 0, 1]
     self.assertEqual(4, hydrohisto.calculate_volume_for_histogram(histogram))
+
